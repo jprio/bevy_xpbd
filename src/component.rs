@@ -15,12 +15,12 @@ impl Default for Mass {
     }
 }
 #[derive(Component, Debug, Default)]
-pub struct PreSolveVel(pub(crate) Vec2);
+pub struct PreSolveVel(pub Vec2);
 
 #[derive(Resource, Debug, Default)]
 pub struct Contacts(pub Vec<(Entity, Entity)>);
 #[derive(Component, Debug, Default)]
-pub struct Vel(pub(crate) Vec2);
+pub struct Vel(pub Vec2);
 
 #[derive(Debug, Component)]
 pub struct CircleCollider {
@@ -32,7 +32,14 @@ impl Default for CircleCollider {
         Self { radius: 0.5 }
     }
 }
-
+#[derive(Bundle, Default)]
+pub struct StaticColliderBundle {
+    pub pos: Pos,
+    pub collider: CircleCollider,
+    pub restitution: Restitution,
+}
+#[derive(Default, Debug, Resource)]
+pub struct StaticContacts(pub Vec<(Entity, Entity)>);
 #[derive(Component, Debug)]
 pub struct Restitution(pub f32);
 

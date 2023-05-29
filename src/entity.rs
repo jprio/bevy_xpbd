@@ -4,13 +4,13 @@ use crate::*;
 
 #[derive(Bundle, Default)]
 pub struct ParticleBundle {
-    pos: Pos,
-    prev_pos: PrevPos,
-    mass: Mass,
-    collider: CircleCollider,
-    vel: Vel,
-    pre_solve_vel: PreSolveVel,
-    restitution: Restitution,
+    pub pos: Pos,
+    pub prev_pos: PrevPos,
+    pub mass: Mass,
+    pub collider: CircleCollider,
+    pub vel: Vel,
+    pub pre_solve_vel: PreSolveVel,
+    pub restitution: Restitution,
 }
 
 impl ParticleBundle {

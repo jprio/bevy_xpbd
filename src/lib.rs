@@ -121,8 +121,7 @@ pub struct XPBDPlugin;
 impl Plugin for XPBDPlugin {
     fn build(&self, app: &mut App) {
         app.init_resource::<Gravity>();
-        app.init_resource::<Contacts>();
-
+        app.init_resource::<Contacts>().init_resource::<StaticContacts>();
         app.add_stage_before(
             CoreStage::Update,
             FixedUpdateStage,
